@@ -19,7 +19,8 @@
 		"test": "pnpm recursive run test",
 		"lint": "pnpm recursive run lint",
 		"prettier": "pnpm recursive run prettier",
-		"typecheck": "pnpm recursive run typecheck"
+		"typecheck": "pnpm recursive run typecheck",
+		"release": "pnpm recursive run release"
 	},
 	"devDependencies": {
 		"@leonzalion/configs": "latest",
