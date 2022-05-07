@@ -1,0 +1,18 @@
+{
+	"extends": "../tsconfig.json",
+	"compilerOptions": {
+		"rootDir": "..",
+		"baseUrl": ".",
+		"paths": {
+			"~/*": [
+				"../packages/run-if-env/src/*"
+			],
+			"~test/*": [
+				"./*"
+			]
+		}
+	},
+	"include": [
+		"./"
+	]
+}

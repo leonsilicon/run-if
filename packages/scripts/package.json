@@ -1,0 +1,7 @@
+{
+	"name": "@run-if-env/scripts",
+	"type": "module",
+	"dependencies": {
+		"lion-system": "^1.3.25"
+	}
+}
