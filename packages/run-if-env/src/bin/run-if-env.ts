@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 import process from 'node:process';
-import qs from 'qs';
 import { execaCommandSync } from 'execa';
 
 const args = process.argv.slice(2);
@@ -15,15 +14,22 @@ if (scriptStartIndex === -1) {
 const conditions = args.slice(0, scriptStartIndex);
 const script = args.slice(scriptStartIndex).join(' ');
 
-const query = conditions.join('&');
-const expected = qs.parse(query);
+function skipRun(reason: string) {
+	console.info(`run-if-env: Skipped running \`${script}\` ${reason}`);
+	process.exit(0);
+}
 
-for (const env in expected) {
-	if (process.env[env] !== expected[env]) {
-		console.info(
-			`run-if-env: Skipped running \`${script}\` because ${env} was equal to ${expected[env]}`
-		);
-		process.exit(0);
+for (const condition of conditions) {
+	if (condition.includes('!=')) {
+		const [key, expectedValue] = condition.split('!=');
+		if (process.env[key!] === expectedValue) {
+			skipRun(`because ${key} was equal to ${expectedValue}`);
+		}
+	} else if (condition.includes('=')) {
+		const [key, expectedValue] = condition.split('=');
+		if (process.env[key!] !== expectedValue) {
+			skipRun(`because ${key} was equal to ${expectedValue}`);
+		}
 	}
 }
 
