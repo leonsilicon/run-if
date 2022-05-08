@@ -1,5 +1,5 @@
 {
-	"name": "run-if-env",
+	"name": "@run-if-env/monorepo",
 	"version": "0.0.0",
 	"description": "Run a command if an environment variable is set.",
 	"license": "MIT",
@@ -20,7 +20,7 @@
 		"lint": "pnpm recursive run lint",
 		"prettier": "pnpm recursive run prettier",
 		"typecheck": "pnpm recursive run typecheck",
-		"release": "pnpm recursive run release"
+		"release": "pnpm --filter run-if-env release"
 	},
 	"devDependencies": {
 		"@leonzalion/configs": "latest",
