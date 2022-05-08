@@ -1,6 +1,6 @@
 {
 	"name": "run-if-env",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Run a command if an environment variable is set.",
 	"license": "MIT",
 	"repository": {
