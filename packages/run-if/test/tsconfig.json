@@ -5,7 +5,7 @@
 		"baseUrl": ".",
 		"paths": {
 			"~/*": [
-				"../packages/run-if-env/src/*"
+				"../src/*"
 			],
 			"~test/*": [
 				"./*"

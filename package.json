@@ -1,13 +1,13 @@
 {
-	"name": "@run-if-env/monorepo",
+	"name": "@run-if/monorepo",
 	"version": "0.0.0",
-	"description": "Run a command if an environment variable is set.",
+	"description": "Run a command if a certain condition is met.",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/leonzalion/run-if-env.git"
+		"url": "https://github.com/leonzalion/run-if.git"
 	},
-	"homepage": "https://github.com/leonzalion/run-if-env#readme",
+	"homepage": "https://github.com/leonzalion/run-if#readme",
 	"author": {
 		"name": "Leon Si",
 		"email": "contact@leonzalion.com",
@@ -20,7 +20,7 @@
 		"lint": "pnpm recursive run lint",
 		"prettier": "pnpm recursive run prettier",
 		"typecheck": "pnpm recursive run typecheck",
-		"release": "pnpm --filter run-if-env release"
+		"release": "pnpm --filter run-if release"
 	},
 	"devDependencies": {
 		"@leonzalion/configs": "^1.4.13",
