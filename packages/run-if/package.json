@@ -1,6 +1,6 @@
 {
 	"name": "run-if",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"description": "Run a command if a certain condition is met.",
 	"license": "MIT",
 	"repository": {
