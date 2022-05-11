@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import process from 'node:process';
 import { execaCommandSync } from 'execa';
+import process from 'node:process';
 
 const args = process.argv.slice(2);
 
@@ -23,12 +23,12 @@ for (const condition of conditions) {
 	if (condition.includes('!=')) {
 		const [key, expectedValue] = condition.split('!=');
 		if (process.env[key!] === expectedValue) {
-			skipRun(`because ${key} was equal to ${expectedValue}`);
+			skipRun(`because ${key!} was equal to ${expectedValue!}`);
 		}
 	} else if (condition.includes('=')) {
 		const [key, expectedValue] = condition.split('=');
 		if (process.env[key!] !== expectedValue) {
-			skipRun(`because ${key} was equal to ${expectedValue}`);
+			skipRun(`because ${key!} was equal to ${expectedValue!}`);
 		}
 	}
 }
